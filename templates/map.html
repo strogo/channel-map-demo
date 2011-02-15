@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Channel API/Google Maps Demo - Based on BBYScan</title>
+<style type="text/css">
+    /*** CSS RESET - Copyright (c) 2010, Yahoo! Inc. All rights reserved.
+    Code licensed under the BSD License: http://developer.yahoo.com/yui/license.html
+    version: 3.1.1, build: 47 
+    Modified for use by Best Buy ***/
+
+    html { color: #000; background: #FFF; }
+    body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin: 0; padding: 0; }
+    table { border-collapse: collapse; border-spacing: 0; }
+    fieldset, img { border: 0; }
+    address, caption, cite, code, dfn, em, strong, th, var { font-style: inherit; font-weight: inherit; }
+    li { list-style: none; }
+    caption, th { text-align: left; }
+    h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+    q:before, q:after { content: ''; }
+    abbr, acronym { border: 0; font-variant: normal; }
+    sup { vertical-align: text-top; }
+    sub { vertical-align: text-bottom; }
+    input, textarea, select { font-family: inherit; font-size: inherit; font-weight: inherit; }
+    /* for non-HTML5 browsers 
+    section, article, aside, footer, header, nav, hgroup { display: block; }
+    time { display: inline; }
+    */
+    
+    /*** Applied Styles ***/
+    html { 
+        height: 100%;
+        background-color: #16130d;
+        color: #ddd;
+    }
+    
+    body {
+        height: 100%;
+        font: 14px/1.25 "HelveticaNeue", "Helvetica Neue", arial, helvetica, sans-serif;
+        text-rendering: optimizeLegibility;
+        overflow: hidden;
+    }
+    
+    h1 {  
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", arial, helvetica, clean, sans-serif;
+        font-weight: 300; /* makes it light in ffox */
+        font-size: 18px;
+    }
+    
+    /* floated div clear fixes */
+    .wrap:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: "\0020";
+        clear: both;
+        height: 0;
+        min-height: 0;
+    }
+
+    .wrap { zoom: 1; } /* for ie7 */
+    .clear { clear: both; }
+    
+    table {
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+    
+    table.content {
+        width:100%;
+        height:100%;
+    }
+    
+    .header {
+        height: 54px;
+        padding: 20px 25px 18px 25px;
+    }
+    
+    td.sidebar {
+        width: 300px;
+        vertical-align: top;
+        border-top: 1px solid #000;
+    }
+    
+    div.stat_field {
+        padding: 20px;
+        border-bottom: 1px solid #000;
+        border-top: 1px solid #333;
+    }
+    
+    div.stat_field:last-child {
+        border-bottom: 0px;
+    }
+    
+    div.stat_field ol {
+        padding: 10px 0px 0px 21px;
+    }
+    div.stat_field ol li {
+        list-style: decimal;
+        padding-bottom: 20px;
+        padding-top: 0px;
+    }
+    
+    div.product {
+        padding-top: 15px;
+    }
+    
+    div.product div.img_detail {
+        float: left;
+        width: 54px;
+        background: #fff;
+        -moz-border-radius: 5px;
+    	-webkit-border-radius: 5px;
+    	border-radius: 5px;
+    	padding: 5px;
+    	margin-right: 7px;
+    	text-align: center;
+    	line-height: 0px;
+    }
+    
+    div.product div.img_detail img {
+        max-width: 54px;
+        max-height: 75px;        
+    }
+    
+    div.product div.meta_data {
+        width: 180px;
+        float: left;
+    }
+    
+    div.product span.total, div.product span.place, div.product span.date {
+        font-size: 12px;
+        color: #888;
+    }
+    
+    td.mc {
+        height: 100%;
+    }
+    
+    /* Map styles */
+    #map_canvas {
+        height: 100%;
+        width: 100%;
+    }
+    
+    #map_canvas:after {
+        content: '.';
+    }
+    
+   div.infowindowcontent {
+        color: #333;
+    }
+    
+    div.infowindowcontent img {
+        padding-right: 10px;
+    }
+    
+    div.infowindowcontent strong {
+        font-size: 16px;
+    }
+    
+    div.infowindowcontent em {
+        color: #666;
+    }
+   
+    div.infowindowcontent table {
+        height: 80px;
+    }
+    
+    td.prod_info {
+        max-width: 300px;
+    }
+   
+    td.prod_img {
+        width: 54px;
+    	text-align: center;
+    	line-height: 0px;
+    }
+   
+    td.prod_img img {
+       max-height: 75px;
+       max-width: 54px;
+   }
+
+    /** hack hack hack: could break at any time. FIXME: create a custom InfoWindow **/
+    img[src='http://maps.gstatic.com/intl/en_us/mapfiles/iw_close.gif'] {display: none;}
+
+</style>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="/_ah/channel/jsapi"></script>
+
+</head>
+<body>
+<div id="map_canvas"></div>
+   
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.js" type="text/javascript" charset="utf-8"></script> 
+<script type="text/javascript" src="/javascript/map.js"></script>
+<script type="text/javascript">
+$(function() { MapDemo.setUp('{{ token }}') });
+</script>
+</body>
+</html>

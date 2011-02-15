@@ -1,0 +1,11 @@
+application: bby-map-demo
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /javascript
+  static_dir: javascript
+
+- url: .*
+  script: main.py
