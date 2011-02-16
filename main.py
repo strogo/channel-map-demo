@@ -119,7 +119,8 @@ def delete_inactive_channels():
         
         dt = datetime.strptime(created.split(".")[0], "%Y-%m-%d %H:%M:%S")
 
-        if (now - dt) > timedelta(minutes=60):
+        # NOTE: normally this would be 60 minutes; set it lower to expose the refresh behavior
+        if (now - dt) > timedelta(minutes=1):
             del channels[channel_id]
             
             message = {'refresh': 'y'}
