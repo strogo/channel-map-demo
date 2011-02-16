@@ -3,7 +3,7 @@ import os
 import random
 import uuid
 
-from django.utils import simplejson
+import simplejson
 
 from google.appengine.api import channel
 from google.appengine.api import memcache 
