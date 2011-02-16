@@ -37,7 +37,12 @@ STORES = [Store(name='Stillwater', state='OK', lat=36.14249, lon=-97.05415),
 PRODUCTS = [Product(name='Raymarine C90W Chartplotter GPS', image='http://images.bestbuy.com/BestBuy_US/images/products/1063/1063733_sc.jpg'),
             Product(name='SunBriteTV 32" Class / 720p / 60Hz / Outdoor LCD HDTV with Articulating Wall Mount', image='http://images.bestbuy.com/BestBuy_US/images/products/8848/8848937_rc.jpg'),
             Product(name='Brother MFC-9450cdn Network-Ready Color All-in-One Laser Printer', image='http://images.bestbuy.com/BestBuy_US/images/products/9534/9534202_rc.jpg'),
-            Product(name='Fierce Audio Power and Signal Installation Kit', image='http://images.bestbuy.com/BestBuy_US/images/products/8848/8848937_rc.jpg')]
+            Product(name='Fierce Audio Power and Signal Installation Kit', image='http://images.bestbuy.com/BestBuy_US/images/products/8848/8848937_rc.jpg'),
+            Product(name='Apple iPad with Wi-Fi - 16GB', image='http://images.bestbuy.com/BestBuy_US/images/products/9811/9811355_sc.jpg'),
+            Product(name='Toshiba 37" Class / 1080p / 60Hz / LCD HDTV', image='http://images.bestbuy.com/BestBuy_US/images/products/9868/9868051_sc.jpg'),
+            Product(name='Samsung 55" Class / 1080p / 120Hz / LCD HDTV', image='http://images.bestbuy.com/BestBuy_US/images/products/9784/9784144_sc.jpg'),
+            Product(name='New Super Mario Bros. Wii - Nintendo Wii', image='http://images.bestbuy.com/BestBuy_US/images/products/9560/9560833.jpg'),
+            Product(name='StarCraft II: Wings of Liberty', image='http://images.bestbuy.com/BestBuy_US/images/products/8719/8719899.jpg')]
 
 
 class ScanHandler(webapp.RequestHandler):
